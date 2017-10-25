@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.3.min.js"></script>
+	</head>
+	<body>
+		<ol></ol>
+	</body>
+</html>
+<script>
+	var Ol=document.getElementsByTagName("ol")[0];
+//	for(var i=0;i<10;i++){
+//		var $li=$("<li></li>")
+//		$li.html(i+1).appendTo($("ol"))
+//	}
+//	$("li").click(function(){
+//		alert($(this).index())
+//	})
+//	for(var i=0;i<10;i++){
+//		var Li=document.createElement("li");
+//		Li.innerHTML=i+1;
+//		Li.index=i;
+//		Li.onclick=function(){
+//			alert(this.index)
+//		}
+//		
+//		Ol.appendChild(Li)
+//	}
+	function fn(){
+		console.log(1)
+	}
+	for(var i=0;i<10;i++){
+		(function(i){
+			var Li=document.createElement("li");
+			Li.innerHTML=i+1;
+			Li.onclick=function(){
+			 	alert(i)
+			 	fn()
+		    }
+			Ol.appendChild(Li)
+		})(i)
+	}
+	
+</script>

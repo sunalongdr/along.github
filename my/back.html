@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			body{padding-top: 3000px;}
+			/*.box{position: fixed;left:0;top:0;width: 2100px;height: 1000px;transition: transform;transform-origin: center bottom;transition-duration: 2s;overflow: hidden;}
+			.box1{position: fixed;left:0;top:0;width: 2100px;height: 1000px;}
+			img{width: 2100px;height: 1000px;transition: transform;transform-origin: center bottom;transition-duration: 2s;}*/
+			.box{position: fixed;left:0;top:0;width: 2100px;height: 1000px;transform-origin: center bottom;overflow: hidden;}
+			.box1{position: fixed;left:0;top:0;width: 2100px;height: 1000px;}
+			img{width: 2100px;height: 1000px;transform-origin: center bottom;}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"><img src="images/0.png"/></div>
+		<div class="box"><img src="images/1.png"/></div>
+		<div class="box"><img src="images/2.png"/></div>
+	</body>
+</html>
+<script>
+//	$(".box").click(function(){
+//		$(this).css(
+//			'transform',"rotate(180deg)"
+//		);
+//		$(this).find("img").css(
+//			'transform',"rotate(-180deg)"
+//		);
+//	});
+	$(window).scroll(function(){
+		var sctop=$(this).scrollTop()
+		var boxHeigh=$(".box").height()
+		
+		if(sctop<=boxHeigh){
+			$(".box:eq(0)").css(
+				'transform',"rotate("+180*sctop/boxHeigh+"deg)"
+			);
+			$(".box:eq(0)").find("img").css(
+				'transform',"rotate(-"+180*sctop/boxHeigh+"deg)"
+			)
+		}
+		if(sctop>boxHeigh){
+			console.log(sctop,boxHeigh)
+			var dis=sctop-boxHeigh
+			$(".box:eq(1)").css(
+				'transform',"rotate("+180*dis/boxHeigh+"deg)"
+			);
+			$(".box:eq(1)").find("img").css(
+				'transform',"rotate(-"+180*dis/boxHeigh+"deg)"
+			)
+			console.log(sctop,boxHeigh)
+		}
+		
+		
+	});
+</script>
+	
+		
+	

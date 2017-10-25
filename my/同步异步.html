@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>日期</button>
+	</body>
+</html>
+<script>
+//	console.log(100)
+//	alert("465")
+//	console.log(500)
+	var riz=document.getElementsByTagName("button")[0]
+	
+	riz.onclick=function(){
+		var Date1=new Date()
+	 	var year=Date1.getFullYear()
+	 	var month=Date1.getMonth()+1
+	 	var day=Date1.getDate()
+	 	var hours=Date1.getHours()
+	 	var minute=Date1.getMinutes()
+	 	var second=Date1.getSeconds()
+	 	console.log(year+"--"+month+"--"+day+"        "+hours+":"+minute+":"+second)
+ 	}
+	
+</script>
